@@ -1,0 +1,6 @@
+@collaborateur_HostAddress = http://localhost:5051
+
+GET {{collaborateur_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

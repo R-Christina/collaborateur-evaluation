@@ -6,6 +6,6 @@ namespace collaborateur.Models
     {
         [Key]
         public int contrat_id { get; set; }
-        public string type_contrat { get; set; }
+        public required string type_contrat { get; set; }
     }
 }

@@ -18,7 +18,7 @@ namespace collaborateur.Controllers
         }
 
         [HttpGet("liste")]
-        public ActionResult<IEnumerable<type_emp>> GetTypeEmps()
+        public ActionResult<IEnumerable<Type_emp>> GetTypeEmps()
         {
             var typeEmps = _dbContext.type_emp.ToList();
             return Ok(typeEmps);

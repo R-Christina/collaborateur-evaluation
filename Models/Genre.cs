@@ -6,6 +6,6 @@ namespace collaborateur.Models
     {
         [Key]
         public int genre_id { get; set; }
-        public string genre_nom { get; set; }
+        public required string genre_nom { get; set; }
     }
 }

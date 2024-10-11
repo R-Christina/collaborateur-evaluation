@@ -6,6 +6,6 @@ namespace collaborateur.Models
     {
         [Key]
         public int service_id { get; set; }
-        public string service_nom { get; set; }
+        public required string service_nom { get; set; }
     }
 }

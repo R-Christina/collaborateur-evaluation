@@ -135,3 +135,4 @@ D:\stage\projet\evaluation\collaborateur\obj\Debug\net8.0\refint\collaborateur.d
 D:\stage\projet\evaluation\collaborateur\obj\Debug\net8.0\collaborateur.pdb
 D:\stage\projet\evaluation\collaborateur\obj\Debug\net8.0\collaborateur.genruntimeconfig.cache
 D:\stage\projet\evaluation\collaborateur\obj\Debug\net8.0\ref\collaborateur.dll
+D:\stage\projet\evaluation\collaborateur\obj\Debug\net8.0\collaborateur.sourcelink.json

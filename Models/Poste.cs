@@ -6,6 +6,6 @@ namespace collaborateur.Models
     {
         [Key]
         public int poste_id { get; set; }
-        public string poste_nom { get; set; }
+        public required string poste_nom { get; set; }
     }
 }

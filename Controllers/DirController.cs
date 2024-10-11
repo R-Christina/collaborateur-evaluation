@@ -26,5 +26,49 @@ namespace collaborateur.Controllers
             }
             return Ok(dirs);
         }
+
+        [HttpPost("ajouter")]
+        public async Task<IActionResult> PostDir([FromBody] Dir dir)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.dir.Add(dir);
+                    await _context.SaveChangesAsync(); 
+                    return Ok(new { message = "Direction inséré avec succès", data = dir });
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, new { message = "Erreur lors de l'insertion", error = ex.Message });
+                }
+            }
+            return BadRequest(ModelState);
+        }
+
+        [HttpDelete("supprimer/{id}")]
+        public async Task<IActionResult> DeleteDir(int id)
+        {
+            try
+            {
+                // Rechercher la direction par son ID
+                var dir = await _context.dir.FindAsync(id);
+                
+                if (dir == null)
+                {
+                    return NotFound(new { message = "Direction non trouvée." });
+                }
+
+                // Supprimer la direction
+                _context.dir.Remove(dir);
+                await _context.SaveChangesAsync();
+
+                return Ok(new { message = "Direction supprimée avec succès." });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { message = "Erreur lors de la suppression", error = ex.Message });
+            }
+        }
     }
 }

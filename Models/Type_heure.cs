@@ -6,6 +6,6 @@ namespace collaborateur.Models
     {
         [Key]
         public int type_heure_id { get; set; }
-        public string type_heure_nom { get; set; }
+        public required string type_heure_nom { get; set; }
     }
 }

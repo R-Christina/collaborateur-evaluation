@@ -26,5 +26,24 @@ namespace collaborateur.Controllers
             }
             return Ok(services);
         }
+
+        [HttpPost("ajouter")]
+        public async Task<IActionResult> PostService([FromBody] Service service)
+        {
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.service.Add(service);
+                    await _context.SaveChangesAsync(); 
+                    return Ok(new { message = "Service inséré avec succès", data = service });
+                }
+                catch (Exception ex)
+                {
+                    return StatusCode(500, new { message = "Erreur lors de l'insertion", error = ex.Message });
+                }
+            }
+            return BadRequest(ModelState);
+        }
     }
 } 
